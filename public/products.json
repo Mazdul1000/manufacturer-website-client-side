@@ -1,0 +1,25 @@
+[
+    {
+      "id": "124e13b9-2d54-4bdfg2f-a74d-a77b362d6ead",
+      "name": "Weight Measuring Tape",
+      "price": 5,
+      "stock": 2000,
+      "img": "https://i.ibb.co/NF12FSR/HTB1v-Vzb-KVXXXXco-XVXXq6x-XFXXX7.jpg"
+    },
+    {
+      "id": "124e13b9-2d54-4bdfg2dfgf-a74d-a77b362d6ead",
+      "name": "Rubber cow mattress",
+      "price": 30,
+      "stock": 1200,
+      "ratings": 4,
+      "img": "https://i.ibb.co/f21yQfB/Hd8e281e157a849939ed1ed3982d321115.jpg"
+    },
+    {
+      "id": "124e13b9-2ddgf54-4dfgb2gdff-a74d-a77b362d6ead",
+      "name": "Cattle ear tag",
+      "price": 7,
+      "stock": 2000,
+      "ratings": 4,
+      "img": "https://i.ibb.co/fxKRPD0/HTB1-YM3xa-Uvr-K1-Rj-Sszfq6x-JNVXas.jpg"
+    }
+]

@@ -1,0 +1,61 @@
+[
+    {
+        "id": 1,
+        "name": "Lance Jarvis",
+        "location": "London, UK",
+        "designation": "General Manager ",
+        "avatar": "https://testimonialapi.toolcarton.com/avatar/1.jpg",
+        "message": "We have been using product for last one year, and I have to say that it has transformed the way we do business. Thank you for awesome service.",
+        "rating": 4.8
+    },
+    {
+        "id": 2,
+        "name": "Juliet Wright",
+        "location": "Sweden",
+        "designation": "Technical Director",
+        "avatar": "https://testimonialapi.toolcarton.com/avatar/2.jpg",
+        "message": "It has changed the way I used the Pc. Product lets you create anything you envision and it does it so easy and flawless. I can't imagine not working with this product.",   
+        "rating": 4.4
+    },
+    {
+        "id": 3,
+        "name": "Michael D.",
+        "location": "Austin, Texas",
+        "designation": "Investor",
+        "avatar": "https://testimonialapi.toolcarton.com/avatar/3.jpg",
+        "message": "Insights from service drove 30% lift in our conversions, this product service is essential for your Productivity.",
+        
+        "rating": 4.5
+    },
+    {
+        "id": 4,
+        "name": "Kylie Lutz",
+        "location": "Paris, France",
+        "designation": "Freelancer",
+        "avatar": "https://testimonialapi.toolcarton.com/avatar/4.jpg",
+        "message": "The product really helped with my personal and proffesional work - everything from conception to execution was amazing and super professional. Looking forwards for upgradation.",
+      
+        "rating": 5
+    },
+    {
+        "id": 5,
+        "name": "Mark Twin",
+        "location": "Berlin, Germany",
+        "designation": "Developer",
+        "avatar": "https://testimonialapi.toolcarton.com/avatar/5.jpg",
+        "message": "Best product I have ever used! It has helped me a lot to grow my productivity.", 
+        "rating": 4.5
+       
+    },
+    {
+        "id": 6,
+        "name": "Anne",
+        "location": "New York, USA",
+        "designation": "Content Writer & Artist",
+        "avatar": "https://testimonialapi.toolcarton.com/avatar/6.jpg",
+        "message": "These folks are my go-to for any design or branding services. Excellent communication and I feel like I'm always a priority for them.",
+        "lorem": "The performance of this product is awesome. The screen quality is very premium",
+        "rating": 4.7
+    }
+
+    ]
