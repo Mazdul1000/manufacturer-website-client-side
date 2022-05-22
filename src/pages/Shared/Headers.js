@@ -1,7 +1,18 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const Headers = () => {
+  const [user] = useAuthState(auth);
+
+  const logOut = () => {
+    signOut(auth);
+    localStorage.removeItem('accessToken');
+    toast('You have been signed out');
+  }
     return (
         <div>
             <div class="navbar bg-gray-300 px-12">
@@ -23,7 +34,14 @@ const Headers = () => {
       <li><Link to='/dashboard'>Dashboard</Link></li>
     </ul> 
   <div>
-    <button class="btn btn-sm btn-primary text-white">Sign Out</button>
+    {
+      user?
+      <button onClick={logOut} class="btn btn-sm btn-primary text-white">Sign Out</button>
+      :
+      <Link to='/login' class="btn btn-sm btn-primary text-white">Login</Link>
+
+    }
+    
   </div>
   </div>
 </div>

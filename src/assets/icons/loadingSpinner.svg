@@ -1,0 +1,17 @@
+<svg version="1.1" viewBox="-58 -58 116 116" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> 
+<g stroke-linecap="round" stroke-width="15">
+<path id="a" d="m0 35 0,14"/>
+<use transform="rotate(210)" xlink:href="#a" stroke="#529B03"/>
+<use transform="rotate(240)" xlink:href="#a" stroke="#8ad55d"/>
+<use transform="rotate(270)" xlink:href="#a" stroke="#52b131"/>
+<use transform="rotate(300)" xlink:href="#a" stroke="#6c9052"/>
+<use transform="rotate(330)" xlink:href="#a" stroke="#0a8f0b"/>
+<use transform="rotate(0)" xlink:href="#a" stroke="#529B03"/>
+<use transform="rotate(30)" xlink:href="#a" stroke="#8ad55d"/>
+<use transform="rotate(60)" xlink:href="#a" stroke="#52b131"/>
+<use transform="rotate(90)" xlink:href="#a" stroke="#6c9052"/>
+<use transform="rotate(120)" xlink:href="#a" stroke="#0a8f0b"/>
+<use transform="rotate(150)" xlink:href="#a" stroke="#265323"/>
+<use transform="rotate(180)" xlink:href="#a" stroke="#09270a"/>
+</g>
+</svg>
