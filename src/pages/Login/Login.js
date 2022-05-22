@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import googleIcon from '../../assets/icons/google.svg'
 import LoadingSpinner from '../Shared/LoadingSpinner';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useToken from '../../hooks/useToken';
 
@@ -13,6 +13,8 @@ import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
@@ -21,22 +23,29 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
-      const [token] = useToken(user || googleUser)
+    ] = useSignInWithEmailAndPassword(auth);
 
-      let signInError;
-      
-      if (error || resetError ||googleError) {
-         signInError = <p className='text-red-600 font-bold'><small>Error: {error?.message || resetError?.message || googleError?.message}</small></p>        
-      }
+    const [token] = useToken(user || googleUser)
     
-if(googleLoading || sending || loading){
-    return <LoadingSpinner></LoadingSpinner>
-}
+  
+    useEffect( () =>{
+      if (token) {
+          navigate(from, { replace: true });
+      }
+  }, [token, from, navigate])
 
-if (token) {
-    navigate('/');
-  }
+
+
+    if (googleLoading || sending || loading) {
+        return <LoadingSpinner></LoadingSpinner>
+    } 
+
+    let signInError;
+    if (error || resetError || googleError) {
+        signInError = <p className='text-red-600 font-bold'><small>Error: {error?.message || resetError?.message || googleError?.message}</small></p>
+    }
+
+   
 
     const onSubmit = data => {
         const email = data.email;
@@ -47,14 +56,14 @@ if (token) {
         const email = data.email;
         console.log(email)
         if (email) {
-          await sendPasswordResetEmail(email);
-          toast('Sent email');
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
         }
         else {
-          toast('Please enter your email address');
+            toast('Please enter your email address');
         }
-      }
-    
+    }
+
     return (
         <div className='min-h-[80vh] flex justify-center items-center'>
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -89,16 +98,16 @@ if (token) {
                         </div>
                         {signInError}
                         <p className='text-red-600 font-bold'><small onClick={handleSubmit(resetPassword)} className='cursor-pointer '>Forgot Pasword?</small></p>
-                       <div className='flex justify-center'>
-                           <input className='btn w-1/2 btn-sm btn-primary text-white' type="submit" value='Login' />
-                       </div>
-<p className='text-center font-semibold'><small>New to Agri-tools? <Link className='text-primary font-bold' to='/signup'>Create a new account.</Link></small></p>  
+                        <div className='flex justify-center'>
+                            <input className='btn w-1/2 btn-sm btn-primary text-white' type="submit" value='Login' />
+                        </div>
+                        <p className='text-center font-semibold'><small>New to Agri-tools? <Link className='text-primary font-bold' to='/signup'>Create a new account.</Link></small></p>
                     </form>
                     <div>
                         <div className='flex flex-col items-center justify-center'>
                             <div class="divider w-80">OR</div>
                             <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-primary justify-center font-bold">
-                               <img src={googleIcon} className="w-[25px] mr-1" alt="" /> Continue With Google</button>
+                                <img src={googleIcon} className="w-[25px] mr-1" alt="" /> Continue With Google</button>
                         </div>
                     </div>
                 </div>

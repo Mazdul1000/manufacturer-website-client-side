@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Product = ({product}) => {
-    const {name, price, img} = product
+  const navigate = useNavigate();
+    const {name, price, img, description, _id} = product;
     return (
         <div>
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -11,8 +13,9 @@ const Product = ({product}) => {
   <div class="card-body items-center text-center">
     <h2 class="card-title">{name}</h2>
     <p>Price: {price}</p>
+    <p>{description}</p>
     <div class="card-actions">
-      <button class="btn btn-primary">Buy Now</button>
+      <button onClick={() => navigate(`/placeorder/${_id}`)} class="btn btn-primary">Place Order</button>
     </div>
   </div>
 </div>

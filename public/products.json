@@ -3,7 +3,9 @@
       "id": "124e13b9-2d54-4bdfg2f-a74d-a77b362d6ead",
       "name": "Weight Measuring Tape",
       "price": 5,
+      "minOrder":200,
       "stock": 2000,
+      "description":"It is used to measure the body weight of beef cattle, dairy cows and pigs and is an important tool for farms.The other side of the tape contains two size tables, one for the belly circumference of the pig, and the other for the belly circumference and weight of the cow.",
       "img": "https://i.ibb.co/NF12FSR/HTB1v-Vzb-KVXXXXco-XVXXq6x-XFXXX7.jpg"
     },
     {
@@ -11,6 +13,8 @@
       "name": "Rubber cow mattress",
       "price": 30,
       "stock": 1200,
+      "minOrder":200,
+      "description":"Our rubber cow matting offers excellent anti-fatigue properties. This is due to the hardness of the rubber which is able to compress slightly under the weight of the cows, which encourages the cows to move around. This has been proven to reduce the risk of injury to ligaments and joints compared to a hard surface.The top surface of the mat features a “cobbled” pattern which increases the surface area of the mats and provides superior anti-slip properties even when wet. The underside of the mats feature a unique recessed design. This creates channels to help guide liquid and waste away from the mats, which makes the mats much safer and easier to clean compared to other rubber mats.",
       "ratings": 4,
       "img": "https://i.ibb.co/f21yQfB/Hd8e281e157a849939ed1ed3982d321115.jpg"
     },
@@ -19,6 +23,8 @@
       "name": "Cattle ear tag",
       "price": 7,
       "stock": 2000,
+      "minOrder":200,
+      "description":"Allflex ear tags are rugged and dependable for your cattle identification needs. Whether you use cattle tags for simple identification or integrate them as part of your management practices, there are many layout and color options to find the perfect tag for you!",
       "ratings": 4,
       "img": "https://i.ibb.co/fxKRPD0/HTB1-YM3xa-Uvr-K1-Rj-Sszfq6x-JNVXas.jpg"
     }
