@@ -38,7 +38,7 @@ const Reviews = () => {
             responsive={responsive}
             infinite={true}
             >
-{reviews.map(review => <Review key={review.id} review={review}></Review>)}
+{reviews.map(review => <Review key={review._id} review={review}></Review>)}
 </Carousel>;
         </div>
     );
