@@ -38,27 +38,27 @@ const AddReview = () => {
     };
     return (
         <div className='min-h-[80vh] flex justify-center items-center'>
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100 shadow-xl">
                 <div className='bg-primary w-full py-5'>
                     <h1 className="text-3xl font-bold text-white text-center">
                         Write a Review
                     </h1>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Name</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="Enter you email" class="input input-bordered w-full max-w-xs" value={name} readOnly disabled />
+                            <input type="text" placeholder="Enter you email" className="input input-bordered w-full max-w-xs" value={name} readOnly disabled />
                         </div>
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Product Name</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Product Name</span>
                             </label>
                             <select className='select select-bordered w-full max-w-xs' {...register("productName", { required: true })}>
                                 <option value="Hammer">Hammer</option>
@@ -66,11 +66,11 @@ const AddReview = () => {
                                 <option value=" Shovel"> Shovel</option>
                             </select>
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Comment</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Comment</span>
                             </label>
-                            <textarea class="textarea textarea-bordered" placeholder="Write your review" {...register("comment", {required: true, maxLength: 150})}></textarea>
+                            <textarea className="textarea textarea-bordered" placeholder="Write your review" {...register("comment", {required: true, maxLength: 150})}></textarea>
                         </div>
 
                         <div className='flex justify-center'>

@@ -23,6 +23,7 @@ if(loading || isLoading){
         <div>
             <h1 className="text-5xl text-primary font-semibold font-mono my-5 text-center">My Orders</h1>
 
+            {orders.length < 1  && <h className="text-4xl font-bold font-mono text-center"> You have no orders</h>}
             <div className="grid grid-cols-1 overflow-hidden gap-10">
                 {
                     orders.map(order => <OrderRow key={order._id} order={order} refetch={refetch}></OrderRow>)

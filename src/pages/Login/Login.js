@@ -66,34 +66,34 @@ const Login = () => {
 
     return (
         <div className='min-h-[80vh] flex justify-center items-center'>
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100 shadow-xl">
                 <div className='bg-primary w-full py-5'>
                     <h1 className="text-3xl font-bold text-white text-center">
                         Log In
                     </h1>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="Enter you email" class="input input-bordered w-full max-w-xs" {...register("email", { required: true })} />
-                            <label class="label">
-                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-600 font-bold">Email is Required!</span>}
+                            <input type="email" placeholder="Enter you email" className="input input-bordered w-full max-w-xs" {...register("email", { required: true })} />
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-600 font-bold">Email is Required!</span>}
                             </label>
                         </div>
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="Password" class="input input-bordered w-full max-w-xs" {...register("password", { required: true })} />
-                            <label class="label">
-                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-600 font-bold">Password required!</span>}
+                            <input type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" {...register("password", { required: true })} />
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-600 font-bold">Password required!</span>}
                             </label>
                         </div>
                         {signInError}
@@ -105,8 +105,8 @@ const Login = () => {
                     </form>
                     <div>
                         <div className='flex flex-col items-center justify-center'>
-                            <div class="divider w-80">OR</div>
-                            <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-primary justify-center font-bold">
+                            <div className="divider w-80">OR</div>
+                            <button onClick={() => signInWithGoogle()} className="btn btn-outline btn-primary justify-center font-bold">
                                 <img src={googleIcon} className="w-[25px] mr-1" alt="" /> Continue With Google</button>
                         </div>
                     </div>

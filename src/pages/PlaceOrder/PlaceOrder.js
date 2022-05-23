@@ -48,9 +48,9 @@ const PlaceOrder = () => {
 
     return (
         <div className=' '>
-            <div class="grid grid-cols-1 md:grid-cols-3 ">
+            <div className="grid grid-cols-1 md:grid-cols-3 ">
 
-                <div class="col-span-2">
+                <div className="col-span-2">
                     <div className="hero">
                         <div className="hero-content flex-col min-h-screen bg-accent lg:flex-row">
                             <img className='lg:max-w-[458px] w-1/2 rounded-lg shadow-2xl' src={img} alt='' />
@@ -65,31 +65,31 @@ const PlaceOrder = () => {
 
                     </div>
                 </div>
-                <div class="">
-                    <div class="card-body">
+                <div className="">
+                    <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
 
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Name</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="name" class="input input-bordered input-primary" value={user?.displayName} disabled readOnly />
-                                <label class="label">
+                                <input type="text" placeholder="name" className="input input-bordered input-primary" value={user?.displayName} disabled readOnly />
+                                <label className="label">
                                 </label>
                             </div>
 
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" class="input input-bordered input-primary" value={user?.email} disabled readOnly />
+                                <input type="text" placeholder="email" className="input input-bordered input-primary" value={user?.email} disabled readOnly />
                             </div>
 
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Phone</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Phone</span>
                                 </label>
-                                <input type="text" name='phone' placeholder="phone" class="input input-bordered input-primary" {...register("phone", {
+                                <input type="text" name='phone' placeholder="phone" className="input input-bordered input-primary" {...register("phone", {
                   required: {
                     value: true,
                     message: 'Username is Required'
@@ -100,25 +100,25 @@ const PlaceOrder = () => {
                   }
 
                 })} />
-                <label>{errors.phone?.type === 'pattern' && <span class="label-text-alt text-red-600 font-bold">{errors.phone.message}</span>}</label>
+                <label>{errors.phone?.type === 'pattern' && <span className="label-text-alt text-red-600 font-bold">{errors.phone.message}</span>}</label>
                        </div>
 
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Address</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Address</span>
                                 </label>
-                                <input type="text" placeholder="address" class="input input-bordered input-primary" {...register("address", { required: true })} />
+                                <input type="text" placeholder="address" className="input input-bordered input-primary" {...register("address", { required: true })} />
 
                             </div>
 
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Quantity</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Quantity</span>
                                 </label>
-                                <input type="number" name='quantity' class="input input-bordered input-primary" placeholder={minOrder} {...register("quantity", { required: true, max: { stock }, min: { minOrder } })} value={minOrder} />
-                                <label class="label">
-                                    {errors.quantity?.type === 'min' && <span class="label-text-alt text-red-600 font-bold">You must fulfill the minimum order</span>}
-                                    {errors.quantity?.type === 'max' && <span class="label-text-alt text-red-600 font-bold">Out of Stock</span>}
+                                <input type="number" name='quantity' className="input input-bordered input-primary" placeholder={minOrder} {...register("quantity", { required: true, max: { stock }, min: { minOrder } })} value={minOrder} />
+                                <label className="label">
+                                    {errors.quantity?.type === 'min' && <span className="label-text-alt text-red-600 font-bold">You must fulfill the minimum order</span>}
+                                    {errors.quantity?.type === 'max' && <span className="label-text-alt text-red-600 font-bold">Out of Stock</span>}
                                 </label>
                             </div>
 

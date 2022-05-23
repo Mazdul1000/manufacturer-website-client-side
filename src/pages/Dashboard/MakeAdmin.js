@@ -15,19 +15,19 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Email</th>
+                            <th>Promote</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <UserRow key={user._id} index={index} user={user}></UserRow>)
+                            users.map((user, index) => <UserRow key={user._id} index={index} user={user} refetch={refetch}></UserRow>)
                         }
                     </tbody>
                 </table>

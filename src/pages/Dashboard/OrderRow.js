@@ -32,17 +32,17 @@ const OrderRow = ({order,refetch}) => {
                 <p>Address: {address}</p>
             </div>
             <div className='flex flex-col gap-5 basis-1/3'>
-            <button class="btn btn-md btn-primary text-white">Payment</button>
-            <label for="confirm-modal" class="btn modal-button btn-md bg-red-600 text-white">open modal</label>
+            <button className="btn btn-md btn-primary text-white">Payment</button>
+            <label htmlFor="confirm-modal" className="btn modal-button btn-md bg-red-600 text-white">Cancel Order</label>
             </div>
             <div>
-            <input type="checkbox" id="confirm-modal" class="modal-toggle" />
-<div class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
-    <h3 class="font-bold text-lg">Are you sure you want to delete?</h3>
-    <div class="modal-action">
-      <label onClick={()=> setIsConfirm(true)} for="confirm-modal" class="btn">Yes, I am sure</label>
-      <label onClick={()=> setIsConfirm(false)} for="confirm-modal" class="btn">No</label>
+            <input type="checkbox" id="confirm-modal" className="modal-toggle" />
+<div className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Are you sure you want to delete?</h3>
+    <div className="modal-action">
+      <label onClick={()=> setIsConfirm(true)} htmlFor="confirm-modal" className="btn">Yes, I am sure</label>
+      <label onClick={()=> setIsConfirm(false)} htmlFor="confirm-modal" className="btn">No</label>
     </div>
   </div>
 </div>
