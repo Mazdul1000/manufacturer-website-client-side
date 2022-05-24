@@ -46,11 +46,11 @@ const Headers = () => {
       </label>
   </div>}
 
-  <div className="navbar-center hidden lg:flex">
+  <div className="navbar-end hidden lg:flex">
     <ul className="menu menu-horizontal w-full p-0 text-primary font-bold text-xl gap-2">
       <li><Link to='/blogs'>Blogs</Link></li>
-      {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
       <li><Link to='/myportfolio'>My Portfolio</Link></li>
+      {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
       <li> {
       user?
       <button onClick={logOut} className="font-bold btn-primary rounded-xl text-white">Sign Out</button>
