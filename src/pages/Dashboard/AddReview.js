@@ -70,11 +70,11 @@ const AddReview = () => {
                             <label className="label">
                                 <span className="label-text">Comment</span>
                             </label>
-                            <textarea className="textarea textarea-bordered" placeholder="Write your review" {...register("comment", {required: true, maxLength: 150})}></textarea>
+                            <textarea className="textarea textarea-bordered resize-none h-[100px]" placeholder="Write your review" {...register("comment", {required: true, maxLength: 150})}></textarea>
                         </div>
 
-                        <div className='flex justify-center'>
-                            <input className='btn w-1/2 btn-sm btn-primary text-white' type="submit" value='Login' />
+                        <div className='flex justify-center mt-2'>
+                            <input className='btn w-2/3 btn-primary text-white' type="submit" value='Submit' />
                         </div>
                     </form>
                     
