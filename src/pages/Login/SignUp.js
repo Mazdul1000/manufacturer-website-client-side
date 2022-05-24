@@ -8,9 +8,10 @@ import useToken from '../../hooks/useToken';
 import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+ 
     const [
         createUserWithEmailAndPassword,
         user,
@@ -22,6 +23,10 @@ const SignUp = () => {
 
     const [token] = useToken(user || googleUser);
     const navigate = useNavigate();
+
+    if (token) {
+        navigate('/');
+    }
 
     let signInError;
 
@@ -40,9 +45,7 @@ const SignUp = () => {
 
 
 
-    if (token) {
-        navigate('/');
-    }
+    
 
 
 
@@ -54,6 +57,7 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName })
     };
+    
     return (
         <div className='min-h-[80vh] py-3 flex justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl px-3 md:px-0">

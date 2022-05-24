@@ -7,7 +7,8 @@ const useToken = user => {
 
         const email = user?.user?.email;
         const name = user?.user?.displayName;
-        console.log(name);
+        console.log(user);
+
         let avatar = 'https://i.ibb.co/KzCQm2r/blank-image.jpg';
         if(user?.user?.photoURL){
             avatar = user?.user?.photoURL;

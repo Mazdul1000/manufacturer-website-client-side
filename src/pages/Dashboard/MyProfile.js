@@ -51,7 +51,7 @@ const MyProfile = () => {
              toast.success('Profile Updated')
              refetch();
              setOpenModal(false);
-             updateLoading(false);
+            
             }
         })
 

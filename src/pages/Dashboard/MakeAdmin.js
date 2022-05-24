@@ -1,15 +1,21 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../Shared/LoadingSpinner';
 import UserRow from './UserRow';
 
 const MakeAdmin = () => {
+    const navigate = useNavigate();
     const { data: users, refetch, isLoading } = useQuery('users', () => fetch('http://localhost:5000/users', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
-    }).then(res => res.json()));
+    }).then(res => {
+        res.json()
+         if(res.status === 403){
+             return navigate('/')
+         }}));
     if (isLoading) {
         return <LoadingSpinner></LoadingSpinner>
     }
