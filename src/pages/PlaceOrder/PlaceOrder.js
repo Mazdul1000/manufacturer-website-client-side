@@ -13,7 +13,7 @@ const PlaceOrder = () => {
     const { productId } = useParams();
     const [user, loading] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { data: product, isLoading } = useQuery('product', () => fetch(`http://localhost:5000/product/${productId}`).then(res => res.json()));
+    const { data: product, isLoading } = useQuery('product', () => fetch(` https://agri-tools.herokuapp.com/product/${productId}`).then(res => res.json()));
     if (isLoading) {
         return <LoadingSpinner></LoadingSpinner>
     }
@@ -30,7 +30,7 @@ const PlaceOrder = () => {
            price: price
        }
 
-       fetch('http://localhost:5000/order',{
+       fetch(' https://agri-tools.herokuapp.com/order',{
            method: 'POST',
            headers: {
                'content-type': 'application/json'

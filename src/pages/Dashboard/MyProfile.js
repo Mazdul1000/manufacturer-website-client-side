@@ -14,7 +14,7 @@ const MyProfile = () => {
     const [openModal , setOpenModal] = useState(false);
     const [updateLoading, setUpdateLoading] = useState(false);
 
-    const { data: userData, refetch, isLoading } = useQuery('userData', () => fetch(`http://localhost:5000/user?email=${user?.email}`, {
+    const { data: userData, refetch, isLoading } = useQuery('userData', () => fetch(` https://agri-tools.herokuapp.com/user?email=${user?.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +37,7 @@ const MyProfile = () => {
             facebook: e.target.facebook.value
         }
 
-        fetch(`http://localhost:5000/user/profile/${email}`,{
+        fetch(` https://agri-tools.herokuapp.com/user/profile/${email}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
