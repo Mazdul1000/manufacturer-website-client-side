@@ -47,7 +47,7 @@ const Headers = () => {
   </div>}
 
   <div className="navbar-end hidden lg:flex">
-    <ul className="menu menu-horizontal w-full p-0 text-primary font-bold text-xl gap-2">
+    <ul className="menu menu-horizontal p-0 text-primary font-bold text-xl gap-2">
       <li><Link to='/blogs'>Blogs</Link></li>
       <li><Link to='/myportfolio'>My Portfolio</Link></li>
       {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
