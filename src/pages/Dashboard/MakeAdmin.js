@@ -6,16 +6,19 @@ import UserRow from './UserRow';
 
 const MakeAdmin = () => {
     const navigate = useNavigate();
-    const { data: users, refetch, isLoading } = useQuery('users', () => fetch(' https://agri-tools.herokuapp.com/users', {
+    const { data: users, refetch, isLoading } = useQuery('users', () => fetch(' http://localhost:5000/users', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => {
-        res.json()
+        
          if(res.status === 403){
-             return navigate('/')
-         }}));
+             return navigate('/')           
+         }
+       return res.json()
+        }));
+
     if (isLoading) {
         return <LoadingSpinner></LoadingSpinner>
     }
