@@ -8,7 +8,7 @@ import UserRow from './UserRow';
 
 const ManageAllOrders = () => {
     const navigate = useNavigate();
-    const { data: orders, refetch, isLoading } = useQuery('orders', () => fetch(' http://localhost:5000/orders',{
+    const { data: orders, refetch, isLoading } = useQuery('orders', () => fetch(' https://agri-tools.herokuapp.com/orders',{
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

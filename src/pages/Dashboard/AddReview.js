@@ -23,7 +23,7 @@ const AddReview = () => {
             productName: data.productName
         }
         
-        fetch(' http://localhost:5000/review', {
+        fetch(' https://agri-tools.herokuapp.com/review', {
             method: 'POST',
             headers: {
               'content-type': 'application/json'

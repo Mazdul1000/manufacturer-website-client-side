@@ -8,7 +8,7 @@ import OrderRow from './OrderRow';
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
     
-            const { data:orders,refetch, isLoading } = useQuery('orders', () => fetch(` http://localhost:5000/order?email=${user?.email}`,{
+            const { data:orders,refetch, isLoading } = useQuery('orders', () => fetch(` https://agri-tools.herokuapp.com/order?email=${user?.email}`,{
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

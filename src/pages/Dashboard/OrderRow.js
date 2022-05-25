@@ -6,7 +6,7 @@ const OrderRow = ({order,refetch}) => {
 
     if(isConfirm){
 
-        fetch(` http://localhost:5000/order/${_id}`, {
+        fetch(` https://agri-tools.herokuapp.com/order/${_id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

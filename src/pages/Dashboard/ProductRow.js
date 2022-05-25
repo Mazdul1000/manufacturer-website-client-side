@@ -5,7 +5,7 @@ const ProductRow = ({product, index, refetch}) => {
     const {name, stock, price,img, _id} = product;
 
   const removeProduct = (id) => {
-    fetch(` http://localhost:5000/product/${id}`, {
+    fetch(` https://agri-tools.herokuapp.com/product/${id}`, {
         method: 'DELETE'
     })
     .then(res => res.json())

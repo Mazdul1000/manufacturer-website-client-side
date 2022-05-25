@@ -7,7 +7,7 @@ import UserRow from './UserRow';
 
 const ManageProducts = () => {
     const navigate = useNavigate();
-    const { data: products, refetch, isLoading } = useQuery('products', () => fetch(' http://localhost:5000/products').then(res => {
+    const { data: products, refetch, isLoading } = useQuery('products', () => fetch(' https://agri-tools.herokuapp.com/products').then(res => {
         
          if(res.status === 403){
              return navigate('/')           
