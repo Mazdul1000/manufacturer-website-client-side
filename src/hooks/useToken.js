@@ -14,7 +14,6 @@ const useToken = user => {
         }
 
         const currentUser = { email: email, name: name, avatar: avatar };
-        console.log(currentUser)
 
         if (email) {
             fetch(` https://agri-tools.herokuapp.com/user/${email}`, {

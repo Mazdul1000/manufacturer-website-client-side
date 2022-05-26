@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import googleIcon from '../../assets/icons/google.svg'
 import LoadingSpinner from '../Shared/LoadingSpinner';
 import useToken from '../../hooks/useToken';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const SignUp = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
@@ -62,7 +62,7 @@ const SignUp = () => {
             <div className="card w-96 bg-base-100 shadow-xl px-3 md:px-0">
                 <div className='bg-primary w-full py-5'>
                     <h1 className="text-3xl font-bold text-white text-center">
-                        Log In
+                        Sign Up
                     </h1>
                 </div>
                 <div className="card-body">
@@ -100,9 +100,10 @@ const SignUp = () => {
                         </div>
                         {signInError}
                         <div className='flex justify-center'>
-                            <input className='btn w-1/2 btn-sm btn-primary text-white' type="submit" value='Login' />
+                            <input className='btn w-1/2 btn-sm btn-primary text-white' type="submit" value='Sign Up' />
                         </div>
 
+                        <p className='text-center font-semibold'><small>Already have an account? <Link className='text-primary font-bold' to='/login'>Login</Link></small></p>
                     </form>
                     <div>
                         <div className='flex flex-col items-center justify-center'>
