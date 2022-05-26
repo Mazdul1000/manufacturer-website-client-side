@@ -1,6 +1,6 @@
 
 const ProductRow = ({product, index,setItem}) => {
-    const {name, stock, price,img, _id} = product;
+    const {name, stock, price,img} = product;
 
     
     return (

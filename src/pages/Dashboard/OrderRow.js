@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const OrderRow = ({order, setOrder}) => {
-    const {name, productName,email, quantity, img, phone, address,price,_id, paid} = order;
+    const { productName,email, quantity, img, phone, address,price,_id, paid} = order;
      console.log(order)
 
 

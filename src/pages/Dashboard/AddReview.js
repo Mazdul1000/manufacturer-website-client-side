@@ -1,16 +1,13 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import Rating from 'react-rating';
-import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { StarIcon } from '@heroicons/react/solid'
-import googleIcon from '../../assets/icons/google.svg'
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const AddReview = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const name = user?.displayName;
     const img = user?.photoURL;
     const navigate= useNavigate();

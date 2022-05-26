@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../Shared/LoadingSpinner';
 import DeleteConfirm from './DeleteConfirm';
 import ProductRow from './ProductRow';
-import UserRow from './UserRow';
+
 
 const ManageProducts = () => {
     const navigate = useNavigate();

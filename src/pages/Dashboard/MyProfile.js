@@ -7,7 +7,7 @@ import blankAvatar from '../../assets/image/blank_image.jpg'
 import { toast } from 'react-toastify';
 import linkedIcon from '../../assets/icons/linkedin.svg';
 import facebookIcon from '../../assets/icons/facebook.svg'
-import { Link } from 'react-router-dom';
+
 
 const MyProfile = () => {
     const [user, loading] = useAuthState(auth);

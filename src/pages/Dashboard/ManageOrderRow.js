@@ -1,5 +1,4 @@
 import React from 'react';
-import { toast } from 'react-toastify';
 
 const ManageOrderRow = ({order, index, refetch}) => {
     const {name, price,productName,phone,address, _id,quantity, email} = order;
