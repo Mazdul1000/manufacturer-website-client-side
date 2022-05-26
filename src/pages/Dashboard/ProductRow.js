@@ -1,21 +1,7 @@
-import React from 'react';
-import { toast } from 'react-toastify';
 
-const ProductRow = ({product, index, refetch}) => {
+const ProductRow = ({product, index,setItem}) => {
     const {name, stock, price,img, _id} = product;
 
-  const removeProduct = (id) => {
-    fetch(` https://agri-tools.herokuapp.com/product/${id}`, {
-        method: 'DELETE'
-    })
-    .then(res => res.json())
-    .then(data => {
-        if(data.deletedCount){
-          toast('Product has been removed')
-          refetch();  
-        }
-    })
-  }
     
     return (
        
@@ -25,8 +11,12 @@ const ProductRow = ({product, index, refetch}) => {
         <td>{name}</td>
         <td>{stock}</td>
         <td>{price}</td>
-        <td><button onClick={()=> removeProduct(_id)} className='btn btn-sm bg-red-600 text-white border-0'> Remove</button></td>
+        <td><label htmlFor="confirm-modal" onClick={()=> setItem(product)} className='btn btn-sm bg-red-600 text-white border-0 modal-button'> Remove</label></td>
+
+     
       </tr>
+
+      
     );
 };
 

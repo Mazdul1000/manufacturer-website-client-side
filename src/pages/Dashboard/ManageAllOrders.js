@@ -27,7 +27,7 @@ const ManageAllOrders = () => {
     return (
 
             <div>
-            <h1 className="text-4xl">Manage Orders</h1>
+            <h1 className="text-4xl text-primary text-center font-bold my-7">Manage Orders</h1>
             <div>
             <div className="overflow-x-auto">
                 <table className="table w-full">

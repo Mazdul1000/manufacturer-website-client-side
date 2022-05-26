@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import brandLogo from '../../assets/image/cow.png'
 
 const Headers = () => {
   const location = useLocation();
@@ -37,7 +38,8 @@ const Headers = () => {
     }</li>
       </ul>
     </div>
-    <Link to='/home' className=" text-primary text-3xl font-bold normal-case">AgriTools</Link>
+    <Link to='/home' className=" text-primary text-3xl font-bold normal-case flex">
+     <img className='w-[50px]' src={brandLogo} alt="" /><span className='ml-3'> AgriTools</span></Link>
   </div>
 
  {location.pathname === '/dashboard' && <div className="navbar-end">

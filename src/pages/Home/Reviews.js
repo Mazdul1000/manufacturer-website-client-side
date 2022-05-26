@@ -26,20 +26,21 @@ const Reviews = () => {
           items: 2
         },
         mobile: {
-          breakpoint: { max: 464, min: 0 },
+          breakpoint: { max:544 , min: 0 },
           items: 1
         }
       };
     return (
-        <div className='px-12 mt-28'>
+        <div className='md:px-12 my-28 h-[80vh]'>
             <h1 className="text-4xl mb-3 text-center text-primary font-bold">Customer Reviews</h1>
-            <Carousel
-            className='gap-5' 
+         <Carousel
+            className='gap-5 py-10 pt-10' 
             responsive={responsive}
             infinite={true}
             >
 {reviews.map(review => <Review key={review._id} review={review}></Review>)}
-</Carousel>;
+</Carousel>
+       
         </div>
     );
 };

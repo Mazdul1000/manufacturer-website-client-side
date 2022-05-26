@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import LoadingSpinner from '../Shared/LoadingSpinner';
@@ -8,22 +8,29 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 const PlaceOrder = () => {
-
+    const [quantity, setQuantity] = useState(0);
     const navigate = useNavigate();
     const { productId } = useParams();
     const [user, loading] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { data: product, isLoading } = useQuery('product', () => fetch(` https://agri-tools.herokuapp.com/product/${productId}`).then(res => res.json()));
-    if (isLoading) {
+
+    const handleQuantityChanges = e =>{
+        setQuantity(e.target.value);
+    }
+    console.log(quantity)
+
+    if (isLoading || loading) {
         return <LoadingSpinner></LoadingSpinner>
     }
     const { name, price, description, minOrder, stock, img } = product;
+    
     const onSubmit = async data => {
        const order = {
            name: user?.displayName,
            email: user?.email,
            productName:name,
-           quantity:data.quantity,
+           quantity:quantity,
            phone: data.phone,
            address: data.address,
            img:img,
@@ -115,15 +122,15 @@ const PlaceOrder = () => {
                                 <label className="label">
                                     <span className="label-text">Quantity</span>
                                 </label>
-                                <input type="number" name='quantity' className="input input-bordered input-primary" placeholder={minOrder} {...register("quantity", { required: true, max: { stock }, min: { minOrder } })} value={minOrder} />
+                                <input type="number" onChange={handleQuantityChanges} name='quantity' className="input input-bordered input-primary" placeholder={minOrder} min={minOrder} max={stock+1}/>
                                 <label className="label">
-                                    {errors.quantity?.type === 'min' && <span className="label-text-alt text-red-600 font-bold">You must fulfill the minimum order</span>}
-                                    {errors.quantity?.type === 'max' && <span className="label-text-alt text-red-600 font-bold">Out of Stock</span>}
+                                    {parseInt(quantity) < parseInt(minOrder) && <span className="label-text-alt text-red-600 font-bold">You must fulfill the minimum order</span>}
+                                    { parseInt(quantity) > parseInt(stock)&&  <span className="label-text-alt text-red-600 font-bold">Out of Stock</span>}
                                 </label>
                             </div>
 
                             <div className='flex justify-center form-control mt-3'>
-                                <input className='btn w-1/2 btn-sm btn-primary text-white' type="submit" value='Place Order' />
+                                { parseInt(quantity)< parseInt(minOrder) || parseInt(quantity)> stock ? <input className='btn w-1/2 btn-sm btn-primary text-white' type="submit" value='Place Order' disabled/>: <input className='btn w-1/2 btn-sm btn-primary text-white' type="submit" value='Place Order'/>}
                             </div>
 
                         </form>
