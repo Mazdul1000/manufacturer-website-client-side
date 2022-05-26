@@ -6,12 +6,11 @@ import googleIcon from '../../assets/icons/google.svg'
 import LoadingSpinner from '../Shared/LoadingSpinner';
 import useToken from '../../hooks/useToken';
 import { useNavigate } from 'react-router-dom';
-
 const SignUp = () => {
-   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     const { register, formState: { errors }, handleSubmit } = useForm();
- 
+
     const [
         createUserWithEmailAndPassword,
         user,
@@ -20,9 +19,10 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(googleUser || user);
 
-    const [token] = useToken(user || googleUser);
     const navigate = useNavigate();
+
 
     if (token) {
         navigate('/');
@@ -45,7 +45,7 @@ const SignUp = () => {
 
 
 
-    
+
 
 
 
@@ -53,11 +53,10 @@ const SignUp = () => {
         const displayName = data.name;
         const email = data.email;
         const password = data.password;
-
         await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName })
+        await updateProfile({ displayName });
     };
-    
+
     return (
         <div className='min-h-[80vh] py-3 flex justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl px-3 md:px-0">

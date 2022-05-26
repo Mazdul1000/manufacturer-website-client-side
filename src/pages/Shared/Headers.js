@@ -10,13 +10,12 @@ import brandLogo from '../../assets/image/cow.png'
 const Headers = () => {
   const location = useLocation();
   const [user] = useAuthState(auth);
-  const navigate = useNavigate();
   const logOut = () => {
     signOut(auth);
     localStorage.removeItem('accessToken');
     toast('You have been signed out');
   }
-  console.log(location.pathname)
+
     return (
         <div>
             <div className="navbar bg-gray-300 md:px-12">
