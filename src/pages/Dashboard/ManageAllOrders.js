@@ -3,8 +3,6 @@ import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../Shared/LoadingSpinner';
 import ManageOrderRow from './ManageOrderRow';
-import ProductRow from './ProductRow';
-import UserRow from './UserRow';
 
 const ManageAllOrders = () => {
     const navigate = useNavigate();

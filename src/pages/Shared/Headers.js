@@ -1,8 +1,8 @@
-import { CollectionIcon, MenuAlt3Icon, MenuIcon } from '@heroicons/react/solid';
+import { CollectionIcon} from '@heroicons/react/solid';
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import brandLogo from '../../assets/image/cow.png'
