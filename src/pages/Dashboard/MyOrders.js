@@ -32,7 +32,7 @@ if(loading || isLoading){
                 }
             </div>
 
-            <DeleteConfirm order={order} setItem={setOrder} orderRefetch={refetch}></DeleteConfirm>
+            <DeleteConfirm order={order} setOrder={setOrder} orderRefetch={refetch}></DeleteConfirm>
 
             
         </div>
