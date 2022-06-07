@@ -11,3 +11,15 @@
 * ## Used Node.js on backend server and MongoDB as database.
 * ## designed with Daisyui and tailwind css.
 * ## Used react router for active routing and authorization .
+
+# Technologies
+
+* ## React
+* ## Node.js
+* ## Express.js
+* ## Tailwind CSS
+* ## DaisyUI
+* ## Firebase
+* ## JWT
+* ## React Query
+* ## MongoDB
