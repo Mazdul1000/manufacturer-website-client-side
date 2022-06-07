@@ -4,9 +4,9 @@
 
 # App features 
 
-* ## This is a single page react Application.
-* ## This app has full authentication system
-* ## This app has dedicated back-end server and connected with database.
-* ## This is a dynamic web application and data is fetched from the database.
-* ## 
-* ## This app has authorization system for users and admin.
+* ## Has users, items and orders management system
+* ## Implemented authentication system via firebase and made secured using JWT
+* ## Implemented payment gateway system using stripe.
+* ## Used Node.js on backend server and MongoDB as database.
+* ## designed with Daisyui and tailwind css.
+* ## Used react router for active routing and authorization .
